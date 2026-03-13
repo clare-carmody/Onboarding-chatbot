@@ -418,20 +418,888 @@ const steps = [
   }
 ];
 
-// ── Episode library (subset for matching — key fields only) ──────────────────
+// ── Episode library (80 real EN episodes from Melba catalogue) ──────────────
 const EPISODES = [
-  {id:"ep_001",name:"Beneath her Sheets",mood:"CONNECTION",topics:["EROTIC_MASSAGE","MINDFUL_AND_CONNECTED"],who_is_guided:"HER",spice:"🌶️",practice_tags:["Massage","Mindful Touch"],latest:true},
-  {id:"ep_002",name:"The Morning Kiss",mood:"CONNECTION",topics:["MINDFUL_AND_CONNECTED","KISSING"],who_is_guided:"BOTH",spice:"🌶️",practice_tags:["Kissing","Connection"],latest:true},
-  {id:"ep_003",name:"Tantric Touch",mood:"SENSUAL",topics:["EROTIC_MASSAGE","MINDFUL_AND_CONNECTED"],who_is_guided:"BOTH",spice:"🌶️🌶️",practice_tags:["Tantric","Massage"],latest:true},
-  {id:"ep_004",name:"Her Pleasure First",mood:"SENSUAL",topics:["ORAL_PLEASURE","MINDFUL_AND_CONNECTED"],who_is_guided:"HER",spice:"🌶️🌶️",practice_tags:["Oral","Her Pleasure"],latest:true},
-  {id:"ep_005",name:"Take Command",mood:"INTENSE",topics:["POWER_AND_CONTROL","ROLE_PLAYING"],who_is_guided:"HIM",spice:"🌶️🌶️🌶️",practice_tags:["Power","Roleplay"],latest:true},
-  {id:"ep_006",name:"Blindfolded",mood:"INTENSE",topics:["SENSORY_PLAY","POWER_AND_CONTROL"],who_is_guided:"BOTH",spice:"🌶️🌶️🌶️",practice_tags:["Sensory","Blindfold"],latest:true},
-  {id:"ep_007",name:"Playful Tease",mood:"PLAYFUL",topics:["MINDFUL_AND_CONNECTED","ROLE_PLAYING"],who_is_guided:"BOTH",spice:"🌶️🌶️",practice_tags:["Teasing","Playful"],latest:true},
-  {id:"ep_008",name:"New Angles",mood:"SENSUAL",topics:["NEW_SEX_POSITIONS","MINDFUL_AND_CONNECTED"],who_is_guided:"BOTH",spice:"🌶️🌶️",practice_tags:["Positions","Exploration"],latest:true},
-  {id:"ep_009",name:"Slow Burn",mood:"SENSUAL",topics:["EROTIC_MASSAGE","ORAL_PLEASURE"],who_is_guided:"HER",spice:"🌶️🌶️",practice_tags:["Slow","Sensual"],latest:true},
-  {id:"ep_010",name:"Reconnect",mood:"CONNECTION",topics:["MINDFUL_AND_CONNECTED","KISSING"],who_is_guided:"BOTH",spice:"🌶️",practice_tags:["Connection","Intimacy"],latest:true},
-  {id:"ep_011",name:"The Dominant",mood:"INTENSE",topics:["POWER_AND_CONTROL","SENSORY_PLAY"],who_is_guided:"HIM",spice:"🌶️🌶️🌶️",practice_tags:["Dominance","Intensity"],latest:true},
-  {id:"ep_012",name:"Playful Roleplay",mood:"PLAYFUL",topics:["ROLE_PLAYING","NEW_SEX_POSITIONS"],who_is_guided:"BOTH",spice:"🌶️🌶️",practice_tags:["Roleplay","Fun"],latest:true}
+  {
+    "id": "c5f01108-c2b5-4e25-bd67-5872b5adbd52",
+    "name": "The one who receives",
+    "mood": "SENSUAL",
+    "topics": ["BUTT_PLAY"],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Anal Fingering", "Handjob", "Massage"],
+    "image": "experienceimage_the_one_who_receives.webp",
+    "latest": false
+  },
+  {
+    "id": "1f73aadf-2dce-4f35-88da-b0b77a6c1110",
+    "name": "Head Girl",
+    "mood": "INTENSE",
+    "topics": ["ORAL_PLEASURE", "POWER_AND_CONTROL", "ROLE_PLAYING"],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Ball Games", "Explicit Language", "Female Submissive"],
+    "image": "experienceimage_head_girl.webp",
+    "latest": false
+  },
+  {
+    "id": "73f1a08a-9bbc-4b9d-af2c-21513e60f5ca",
+    "name": "The Gentle Art of Receiving",
+    "mood": "CONNECTION",
+    "topics": [],
+    "who_is_guided": "SOLO",
+    "spice": "🌶️",
+    "practice_tags": ["Massage", "Mindful Breathing", "Tantra"],
+    "image": "experienceimage_revenir_\u00e0_soi.webp",
+    "latest": false
+  },
+  {
+    "id": "f6e7390b-783d-4405-99fc-7873dfa3b6e0",
+    "name": "The Bridge",
+    "mood": "SENSUAL",
+    "topics": ["NEW_SEX_POSITIONS"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Caresses", "Fingering", "Quickie"],
+    "image": "experienceimage_the_bridge.webp",
+    "latest": false
+  },
+  {
+    "id": "245a6127-feba-4aa8-a1c7-c3132ae0e6ef",
+    "name": "All Tied Up",
+    "mood": "INTENSE",
+    "topics": ["BUTT_PLAY", "POWER_AND_CONTROL"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Anal Fingering", "Bondage", "Kissing"],
+    "image": "experienceimage_celui_qui_se_faisait_bander_les_yeux.webp",
+    "latest": false
+  },
+  {
+    "id": "0b651ff0-f079-40ca-bd30-33cc4b73d92d",
+    "name": "His happy ending",
+    "mood": "SENSUAL",
+    "topics": ["EROTIC_MASSAGE"],
+    "who_is_guided": "HER",
+    "spice": "🌶️",
+    "practice_tags": ["Bedroom", "Handjob", "Massage"],
+    "image": "experienceimage_his_happy_ending.webp",
+    "latest": false
+  },
+  {
+    "id": "ddb494ae-dbd4-46aa-964c-9806d39b3e7f",
+    "name": "Jeans On",
+    "mood": "PLAYFUL",
+    "topics": [],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Kissing", "Living Room", "Mutual Masturbation"],
+    "image": "experienceimage_jeans_on.webp",
+    "latest": false
+  },
+  {
+    "id": "fed2c045-e302-421b-be3a-e2f6dc02311b",
+    "name": "Loving Massage",
+    "mood": "CONNECTION",
+    "topics": ["EROTIC_MASSAGE", "MINDFUL_AND_CONNECTED"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️",
+    "practice_tags": ["Massage", "Mindful Breathing"],
+    "image": "experienceimage_yoni_massage.webp",
+    "latest": false
+  },
+  {
+    "id": "c247dba7-df46-4f00-ae84-2bec6c603c4c",
+    "name": "Lingam Massage",
+    "mood": "CONNECTION",
+    "topics": ["EROTIC_MASSAGE", "HANDS_AND_FINGERS", "MINDFUL_AND_CONNECTED"],
+    "who_is_guided": "HER",
+    "spice": "🌶️",
+    "practice_tags": ["Ball Games", "Handjob", "Massage"],
+    "image": "experienceimage_lingam_massage.webp",
+    "latest": false
+  },
+  {
+    "id": "3c158393-dfb8-4d94-8571-f0b44c6bfea2",
+    "name": "The one who gives",
+    "mood": "SENSUAL",
+    "topics": ["BUTT_PLAY"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Anal Fingering", "Butt Play", "Fingering"],
+    "image": "experienceimage_the_one_who_gives.webp",
+    "latest": false
+  },
+  {
+    "id": "8b343ce2-278e-4b86-96f3-38ed22f548ca",
+    "name": "Good Sports",
+    "mood": "PLAYFUL",
+    "topics": ["MINDFUL_AND_CONNECTED", "NEW_SEX_POSITIONS", "ROLE_PLAYING"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Fingering", "Kissing", "Living Room"],
+    "image": "experienceimage_celle_qui_faisaient_du_sport.webp",
+    "latest": false
+  },
+  {
+    "id": "cd55caa3-384e-45b1-9a4b-f6f591875bd8",
+    "name": "His Appreciative Audience",
+    "mood": "SENSUAL",
+    "topics": ["WATCHING_AND_BEING_SEEN"],
+    "who_is_guided": "SOLO",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Edging", "Exhibitionism", "Female Dominant"],
+    "image": "experienceimage_herappreciativeaudience.webp",
+    "latest": false
+  },
+  {
+    "id": "97ce8512-967c-4e49-b307-27bebea185a5",
+    "name": "The Art of Caressing",
+    "mood": "CONNECTION",
+    "topics": ["EROTIC_MASSAGE", "MINDFUL_AND_CONNECTED", "SENSORY_PLAY"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️",
+    "practice_tags": ["Massage", "Mindful Touch"],
+    "image": "experienceimage_the_art_of_caressing.webp",
+    "latest": false
+  },
+  {
+    "id": "b4ff9c4b-5b5c-495e-a321-439a7fa6b351",
+    "name": "Head Boy",
+    "mood": "INTENSE",
+    "topics": ["ORAL_PLEASURE", "POWER_AND_CONTROL", "ROLE_PLAYING"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Explicit Language", "Face Sitting", "Fingering"],
+    "image": "experienceimage_head_boy.webp",
+    "latest": false
+  },
+  {
+    "id": "164bc3c7-96d7-47f0-ba73-7cf747567ea1",
+    "name": "His Multiple Sensations",
+    "mood": "SENSUAL",
+    "topics": ["MINDFUL_AND_CONNECTED", "SENSORY_PLAY"],
+    "who_is_guided": "HER",
+    "spice": "🌶️",
+    "practice_tags": ["Mindful Touch"],
+    "image": "experienceimage_multiple_sensations.webp",
+    "latest": false
+  },
+  {
+    "id": "f1c135ea-d9d8-4201-ba84-d8a69ab37190",
+    "name": "Eating Out",
+    "mood": "SENSUAL",
+    "topics": ["ORAL_PLEASURE"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Fingering", "Kissing", "Man Guided"],
+    "image": "experienceimage_the_one_who_went_down_on_her.webp",
+    "latest": false
+  },
+  {
+    "id": "5e36188f-f9d2-42f4-a2d4-204f722ccaa7",
+    "name": "Yoni Massage",
+    "mood": "CONNECTION",
+    "topics": ["EROTIC_MASSAGE", "HANDS_AND_FINGERS", "MINDFUL_AND_CONNECTED"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️",
+    "practice_tags": ["Massage", "Mindful Touch"],
+    "image": "experienceimage_yoni_massage.webp",
+    "latest": false
+  },
+  {
+    "id": "3c1da57a-c869-4653-83e4-8b1a97c8c4fa",
+    "name": "Taking Turns Oral",
+    "mood": "SENSUAL",
+    "topics": ["MINDFUL_AND_CONNECTED", "ORAL_PLEASURE"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️",
+    "practice_tags": ["Handjob", "Kissing", "Oral for her"],
+    "image": "experienceimage_taking_turn_oral.webp",
+    "latest": false
+  },
+  {
+    "id": "f205bde4-58ff-4268-a741-87e16c9b2b3b",
+    "name": "The Colleagues",
+    "mood": "PLAYFUL",
+    "topics": ["EROTIC_MASSAGE", "ORAL_PLEASURE", "ROLE_PLAYING"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Blindfolds", "Fingering", "Grinding"],
+    "image": "experienceimage_the_colleagues.webp",
+    "latest": false
+  },
+  {
+    "id": "5391da53-efde-4816-aff1-573465e4acc9",
+    "name": "Peach Magic",
+    "mood": "INTENSE",
+    "topics": [],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Anal Fingering", "Massage", "Mutual Masturbation"],
+    "image": "experienceimage_peach_magic.webp",
+    "latest": false
+  },
+  {
+    "id": "1d659a84-115f-4f61-a1e7-62b738d5582b",
+    "name": "Who stands behind?",
+    "mood": "PLAYFUL",
+    "topics": ["MINDFUL_AND_CONNECTED", "SENSORY_PLAY"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Blindfolds", "Fingering", "Lingerie"],
+    "image": "experienceimage_under_the_table.webp",
+    "latest": false
+  },
+  {
+    "id": "680fa0c5-9a80-4078-9b00-c9e9ba8ff39a",
+    "name": "Just the Tongue",
+    "mood": "PLAYFUL",
+    "topics": ["ORAL_PLEASURE"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Kissing", "Man Guided", "Oral for her"],
+    "image": "experienceimage_just_the_tongue.webp",
+    "latest": false
+  },
+  {
+    "id": "a4eb4621-a89e-47ce-97b1-ed437dd65c87",
+    "name": "The One Where She Decides",
+    "mood": "SENSUAL",
+    "topics": ["POWER_AND_CONTROL"],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["69", "Caresses", "Oral for her"],
+    "image": "experienceimage_the_one_where_she_decides.webp",
+    "latest": false
+  },
+  {
+    "id": "e9aa5b6b-4b9c-4c01-83a2-ee483299c346",
+    "name": "Tantric Kissing",
+    "mood": "CONNECTION",
+    "topics": [],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️",
+    "practice_tags": ["Kissing", "Mindful Breathing"],
+    "image": "experienceimage_tantric_kissing.webp",
+    "latest": false
+  },
+  {
+    "id": "33507ee9-080d-47b1-80fa-57949a43602d",
+    "name": "Blow Him Away",
+    "mood": "INTENSE",
+    "topics": ["ORAL_PLEASURE"],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Mutual Masturbation", "Oral for him", "Woman Guided"],
+    "image": "experienceimage_the_one_that_blew_him_away.webp",
+    "latest": false
+  },
+  {
+    "id": "aa6e7cdd-e722-4597-8131-2cbdccb2af14",
+    "name": "Squirting 101",
+    "mood": "INTENSE",
+    "topics": ["HANDS_AND_FINGERS", "TOYS_AND_TOOLS"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Fingering", "Oral for her", "Toys"],
+    "image": "experienceimage_squirting_101.webp",
+    "latest": false
+  },
+  {
+    "id": "91f9b225-ec4f-4a6f-b08b-8e0c71b9dfbc",
+    "name": "Mistress Magician",
+    "mood": "INTENSE",
+    "topics": ["POWER_AND_CONTROL", "SENSORY_PLAY", "TOYS_AND_TOOLS"],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Bondage", "Caresses", "Female Dominant"],
+    "image": "experienceimage_mistress_magician.webp",
+    "latest": false
+  },
+  {
+    "id": "736a135a-10fb-46ef-bf7e-4155eddeefff",
+    "name": "The Explorers",
+    "mood": "SENSUAL",
+    "topics": ["MINDFUL_AND_CONNECTED", "ORAL_PLEASURE"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Fingering", "Kissing", "Mutual Masturbation"],
+    "image": "experienceimage_the_explorer.webp",
+    "latest": false
+  },
+  {
+    "id": "9cceb65a-a37e-4c71-872b-fd014d860f9b",
+    "name": "Beneath her Sheets",
+    "mood": "SENSUAL",
+    "topics": ["MINDFUL_AND_CONNECTED"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️",
+    "practice_tags": ["Man Guided", "Massage", "Mindful Touch"],
+    "image": "experienceimage_beneath_her_sheets.webp",
+    "latest": false
+  },
+  {
+    "id": "959136d2-b140-4f7a-bb86-26bdd61fc6b0",
+    "name": "Massage Magic",
+    "mood": "SENSUAL",
+    "topics": ["EROTIC_MASSAGE", "TOYS_AND_TOOLS"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Caresses", "Massage", "Toys"],
+    "image": "experienceimage_massage_magic.webp",
+    "latest": false
+  },
+  {
+    "id": "62b95e84-016e-4385-8198-06e2d02b0054",
+    "name": "She holds the leash",
+    "mood": "PLAYFUL",
+    "topics": ["POWER_AND_CONTROL", "ROLE_PLAYING", "SENSORY_PLAY"],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Bondage", "Explicit Language", "Female Dominant"],
+    "image": "experienceimage_the_one_with_the_leash.webp",
+    "latest": false
+  },
+  {
+    "id": "820f3dfe-931a-44b0-a97b-d15662380362",
+    "name": "Table Time",
+    "mood": "INTENSE",
+    "topics": ["NEW_SEX_POSITIONS"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Fingering", "Kissing", "Oral for her"],
+    "image": "experienceimage_table_time.webp",
+    "latest": false
+  },
+  {
+    "id": "7b592138-e390-4003-aead-6166b33c8d1b",
+    "name": "The Plumber",
+    "mood": "PLAYFUL",
+    "topics": [],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Ball Games", "Grinding", "Kissing"],
+    "image": "experienceimage_celui_qui_venait_reparer_une_fuite_deau.webp",
+    "latest": false
+  },
+  {
+    "id": "3514db34-66d7-4deb-9f2b-43385767a8c0",
+    "name": "Sweet Anal",
+    "mood": "PLAYFUL",
+    "topics": ["BUTT_PLAY", "TOYS_AND_TOOLS"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️",
+    "practice_tags": ["Anal Fingering", "Analingus", "Butt Play"],
+    "image": "experienceimage_celui_qui_redecouvrait_anal.webp",
+    "latest": false
+  },
+  {
+    "id": "d5965f87-470b-4ac0-9768-6986e77d2aef",
+    "name": "Mirror Blowjob",
+    "mood": "INTENSE",
+    "topics": ["ORAL_PLEASURE", "WATCHING_AND_BEING_SEEN"],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Ball Games", "Bedroom", "Explicit Language"],
+    "image": "experienceimage_mirror_blowjob.webp",
+    "latest": false
+  },
+  {
+    "id": "529e11ae-cb95-4da0-b7f9-4f554eb02956",
+    "name": "In the Corner",
+    "mood": "INTENSE",
+    "topics": ["NEW_SEX_POSITIONS"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Fingering", "Male Dominant", "Man Guided"],
+    "image": "experienceimage_inthecornernew.webp",
+    "latest": false
+  },
+  {
+    "id": "29835255-74c6-4e27-9b1e-61115052d4e6",
+    "name": "The Mirror Speaks",
+    "mood": "PLAYFUL",
+    "topics": ["WATCHING_AND_BEING_SEEN"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Bathroom", "Exhibitionism", "Fingering"],
+    "image": "experienceimagme_themirrorspeaks.webp",
+    "latest": false
+  },
+  {
+    "id": "871bb265-4940-4fd1-8dac-449f9898c207",
+    "name": "Solo Edging",
+    "mood": "SENSUAL",
+    "topics": ["HANDS_AND_FINGERS"],
+    "who_is_guided": "SOLO",
+    "spice": "🌶️",
+    "practice_tags": ["Caresses", "Edging", "JOI (jerk off instructions)"],
+    "image": "experienceimage_solo_edging.webp",
+    "latest": false
+  },
+  {
+    "id": "722db947-29f3-47ef-a697-59267165c710",
+    "name": "Slow Burn",
+    "mood": "SENSUAL",
+    "topics": [],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️",
+    "practice_tags": ["Background music"],
+    "image": "lucie_broto_strong_circle_vibrations_--sref_httpss.mj.run9iA0_5a93a272-c993-4156-a0d3-cbd0920dfc70_2 5.webp",
+    "latest": false
+  },
+  {
+    "id": "c1ba9977-cbb3-4a54-a0f0-0b64c1963394",
+    "name": "Tantric Breathwork",
+    "mood": "CONNECTION",
+    "topics": ["MINDFUL_AND_CONNECTED"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️",
+    "practice_tags": ["Mindful Breathing", "Mindful Touch", "Tantra"],
+    "image": "experienceimage_tantric_breathwork.webp",
+    "latest": false
+  },
+  {
+    "id": "63cffdef-bab8-42fe-81b1-7ab719bab58d",
+    "name": "Her BJ Dream",
+    "mood": "INTENSE",
+    "topics": ["HANDS_AND_FINGERS", "ROLE_PLAYING"],
+    "who_is_guided": "SOLO",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Caresses", "JOI (jerk off instructions)", "Personified Voice"],
+    "image": "experienceimage_her_bj_dream.webp",
+    "latest": false
+  },
+  {
+    "id": "ae30cd87-5324-4b18-8a05-22c260e488b1",
+    "name": "Lip Reader",
+    "mood": "SENSUAL",
+    "topics": ["POWER_AND_CONTROL"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Bedroom", "Blindfolds", "Fingering"],
+    "image": "experienceimage_The_one_who_could_read_lips.webp",
+    "latest": false
+  },
+  {
+    "id": "217c19bb-1726-4c65-bb8e-16349f168915",
+    "name": "Mirror Show",
+    "mood": "INTENSE",
+    "topics": [],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Bedroom", "Caresses", "Exhibitionism"],
+    "image": "experienceimage_mirror_show.webp",
+    "latest": false
+  },
+  {
+    "id": "ead8f9be-f3c3-46a7-8d88-cd4fcf748fb1",
+    "name": "The Art of Staying Present",
+    "mood": "CONNECTION",
+    "topics": ["EROTIC_MASSAGE", "HANDS_AND_FINGERS"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️",
+    "practice_tags": ["Massage", "Mindful Breathing", "Tantra"],
+    "image": "experienceimage_the_art_of_being_present.webp",
+    "latest": false
+  },
+  {
+    "id": "f0bd3538-10ca-4cbb-8d7b-b10c5496ed60",
+    "name": "The One That Vibes",
+    "mood": "CONNECTION",
+    "topics": [],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Caresses", "Massage", "Toys"],
+    "image": "experienceimage_the_one_that_vibe.webp",
+    "latest": false
+  },
+  {
+    "id": "dbb300ac-82b2-4e4e-aaa3-ae05e9a30328",
+    "name": "Master Magician",
+    "mood": "INTENSE",
+    "topics": ["POWER_AND_CONTROL", "ROLE_PLAYING", "SENSORY_PLAY", "TOYS_AND_TOOLS"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Bondage", "Caresses", "Female Submissive"],
+    "image": "experienceimage_the_magician_male_dom.webp",
+    "latest": false
+  },
+  {
+    "id": "e43deb4a-c274-4307-8369-ff00015b5cab",
+    "name": "Hands on",
+    "mood": "SENSUAL",
+    "topics": ["HANDS_AND_FINGERS"],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Bedroom", "Handjob", "Kissing"],
+    "image": "experienceimage_celui_qui_souvrait_sensualite.webp",
+    "latest": false
+  },
+  {
+    "id": "b36cf328-7c9a-4ff2-b5b6-50fc8639647d",
+    "name": "Close Your Eyes",
+    "mood": "SENSUAL",
+    "topics": [],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Caresses", "Exhibitionism", "Man Guided"],
+    "image": "experienceimage_close_your_eyes.webp",
+    "latest": false
+  },
+  {
+    "id": "16ce884f-425e-48d1-a024-a3de5760825f",
+    "name": "She rides all the way",
+    "mood": "PLAYFUL",
+    "topics": ["MINDFUL_AND_CONNECTED", "NEW_SEX_POSITIONS", "POWER_AND_CONTROL"],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Bedroom", "Edging", "Grinding"],
+    "image": "experienceimage_she_rides_all_the_way.webp",
+    "latest": false
+  },
+  {
+    "id": "721b7b26-7ae2-4dad-95e6-55e391611062",
+    "name": "Beneath his Sheets",
+    "mood": "SENSUAL",
+    "topics": ["MINDFUL_AND_CONNECTED"],
+    "who_is_guided": "HER",
+    "spice": "🌶️",
+    "practice_tags": ["Bedroom", "Massage", "Mindful Touch"],
+    "image": "experienceimage_beneath_his_sheets.webp",
+    "latest": false
+  },
+  {
+    "id": "7c499da4-adb2-460e-b2a4-ae62d80d89cd",
+    "name": "Two Spoons",
+    "mood": "PLAYFUL",
+    "topics": ["NEW_SEX_POSITIONS"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Fingering", "Grinding", "Handjob"],
+    "image": "experienceimage_twospoons.webp",
+    "latest": false
+  },
+  {
+    "id": "e0ada668-0089-49be-b28d-0f6fe676960d",
+    "name": "Her Multiple Sensations",
+    "mood": "CONNECTION",
+    "topics": ["SENSORY_PLAY", "TOYS_AND_TOOLS"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️",
+    "practice_tags": ["Massage", "Mindful Touch"],
+    "image": "experienceimage_multiple_sensations.webp",
+    "latest": false
+  },
+  {
+    "id": "326aa54f-4412-4eb4-a009-922ac3a21600",
+    "name": "Slow 69",
+    "mood": "CONNECTION",
+    "topics": ["MINDFUL_AND_CONNECTED", "ORAL_PLEASURE"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["69", "Kissing", "Massage"],
+    "image": "experienceimage_slow_69.webp",
+    "latest": false
+  },
+  {
+    "id": "1388eb5e-7fde-45bf-abc4-cb41cf0d5d22",
+    "name": "Blindfolded",
+    "mood": "SENSUAL",
+    "topics": ["MINDFUL_AND_CONNECTED", "SENSORY_PLAY", "TOYS_AND_TOOLS"],
+    "who_is_guided": "HER",
+    "spice": "🌶️",
+    "practice_tags": ["Fingering", "Kissing", "Mindful Touch"],
+    "image": "experienceimage_mystery_man.webp",
+    "latest": false
+  },
+  {
+    "id": "dd9b4b0d-6366-4883-87e7-afeb297019c7",
+    "name": "Two girls and a guy",
+    "mood": "INTENSE",
+    "topics": [],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Fingering", "Handjob", "Massage"],
+    "image": "experienceimage_two_girls_and_a_guy.webp",
+    "latest": false
+  },
+  {
+    "id": "a1720f42-3614-44db-b685-8369a50219a4",
+    "name": "His Little Feather",
+    "mood": "CONNECTION",
+    "topics": ["SENSORY_PLAY"],
+    "who_is_guided": "HER",
+    "spice": "🌶️",
+    "practice_tags": ["Bedroom", "Mindful Breathing", "Mindful Touch"],
+    "image": "experienceimage_feather_on_him.webp",
+    "latest": false
+  },
+  {
+    "id": "c93b9fb0-8914-4bf9-aba5-ca534ccb3caa",
+    "name": "His Sensual Side",
+    "mood": "SENSUAL",
+    "topics": [],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️",
+    "practice_tags": ["69", "Bedroom", "Handjob"],
+    "image": "experienceimage_celui_qui_souvrait_sensualite.webp",
+    "latest": false
+  },
+  {
+    "id": "56ddabff-21ce-4954-b5d9-dd9f53f04405",
+    "name": "Deepthroat 101",
+    "mood": "INTENSE",
+    "topics": ["ORAL_PLEASURE"],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Bedroom", "Deep Throat", "Explicit Language"],
+    "image": "experienceimage_deepthroat_101.webp",
+    "latest": false
+  },
+  {
+    "id": "a42cc115-3cef-43f0-bf16-2eb80ef10ea2",
+    "name": "For Your Fans",
+    "mood": "PLAYFUL",
+    "topics": ["ROLE_PLAYING", "WATCHING_AND_BEING_SEEN"],
+    "who_is_guided": "SOLO",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Bedroom", "Caresses", "Exhibitionism"],
+    "image": "experienceimage_for_your_fans.webp",
+    "latest": false
+  },
+  {
+    "id": "7b68cc17-b8f2-4490-88e8-92adc7978334",
+    "name": "Double Mirror Game",
+    "mood": "PLAYFUL",
+    "topics": ["HANDS_AND_FINGERS", "WATCHING_AND_BEING_SEEN"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Anal Fingering", "Caresses", "Exhibitionism"],
+    "image": "experienceimage_double_mirror_play.webp",
+    "latest": false
+  },
+  {
+    "id": "3a006a19-94b7-4cae-9066-beab499ba9ac",
+    "name": "The Art of Connection",
+    "mood": "CONNECTION",
+    "topics": [],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️",
+    "practice_tags": ["Kissing", "Massage", "Mindful Breathing"],
+    "image": "experienceimage_the_art_of_connexion.webp",
+    "latest": false
+  },
+  {
+    "id": "1858edd5-0a7e-4cfd-a95a-9043706ea3a0",
+    "name": "We are Film Stars",
+    "mood": "PLAYFUL",
+    "topics": ["ROLE_PLAYING", "WATCHING_AND_BEING_SEEN"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Exhibitionism", "Fingering", "Handjob"],
+    "image": "experienceimage_we_are_movie_stars.webp",
+    "latest": false
+  },
+  {
+    "id": "c047e890-fcf3-450c-90f4-e462901ddc9d",
+    "name": "The Explorer",
+    "mood": "SENSUAL",
+    "topics": [],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Massage", "Mutual Masturbation", "Oral for her"],
+    "image": "experienceimage_the_explorer.webp",
+    "latest": false
+  },
+  {
+    "id": "2e382b92-c2fa-4125-ad31-008624c34ffd",
+    "name": "Connected Warm Up",
+    "mood": "CONNECTION",
+    "topics": ["MINDFUL_AND_CONNECTED"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️",
+    "practice_tags": ["Mindful Breathing", "Mindful Touch"],
+    "image": "experienceimage_connected_warm_up.webp",
+    "latest": false
+  },
+  {
+    "id": "1b235bb7-d4a6-4cec-9717-c0ac5e1ee24e",
+    "name": "Reverse Rider",
+    "mood": "INTENSE",
+    "topics": ["BUTT_PLAY"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Anal Fingering", "Butt Play", "Female Dominant"],
+    "image": "experienceimage_the_reverse_ride.webp",
+    "latest": false
+  },
+  {
+    "id": "21947e00-ad7d-4a7c-8676-1e6e792fec2f",
+    "name": "Equal time",
+    "mood": "PLAYFUL",
+    "topics": ["ORAL_PLEASURE"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Fingering", "Massage", "Mutual Masturbation"],
+    "image": "experienceimage_equaltime.webp",
+    "latest": false
+  },
+  {
+    "id": "4ea5865e-e9af-4225-b88c-0730822662b9",
+    "name": "French Kissing",
+    "mood": "CONNECTION",
+    "topics": [],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️",
+    "practice_tags": ["Kissing", "Mindful Breathing"],
+    "image": "experienceimage_french_kissing.webp",
+    "latest": false
+  },
+  {
+    "id": "3c545863-8420-4a70-a017-96eb2a37eb36",
+    "name": "Uncharted territories",
+    "mood": "SENSUAL",
+    "topics": ["EROTIC_MASSAGE", "MINDFUL_AND_CONNECTED", "SENSORY_PLAY"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️",
+    "practice_tags": ["Massage", "Mindful Touch"],
+    "image": "experienceimage_uncharted_territories.webp",
+    "latest": false
+  },
+  {
+    "id": "f9c2c3ac-c143-47c9-a7c2-b43e446fe80f",
+    "name": "The Magic Position",
+    "mood": "INTENSE",
+    "topics": [],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Fingering", "Kissing", "Nipple Play"],
+    "image": "experienceimage_the_magic_position.webp",
+    "latest": false
+  },
+  {
+    "id": "f56d6b8b-d1c5-44ee-acde-a509826e771b",
+    "name": "Mystery Man",
+    "mood": "INTENSE",
+    "topics": ["ROLE_PLAYING"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["69", "Blindfolds", "Fingering"],
+    "image": "experienceimage_mystery_man.webp",
+    "latest": false
+  },
+  {
+    "id": "8dea83d3-a656-4a80-83a4-28f1783b685a",
+    "name": "Her Beads",
+    "mood": "INTENSE",
+    "topics": ["POWER_AND_CONTROL", "SENSORY_PLAY", "WATCHING_AND_BEING_SEEN"],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Exhibitionism", "Fingering", "Grinding"],
+    "image": "Her beads.webp",
+    "latest": false
+  },
+  {
+    "id": "4fdf7d3b-fae6-4e8d-8b2d-7788bc0cde98",
+    "name": "Between the three of us",
+    "mood": "PLAYFUL",
+    "topics": [],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Fingering", "Handjob", "Oral for her"],
+    "image": "experienceimage_two_guys_and_a_girl.webp",
+    "latest": false
+  },
+  {
+    "id": "60e063ef-f89a-41df-a6a6-df8d3a78b05b",
+    "name": "Edge Control",
+    "mood": "INTENSE",
+    "topics": [],
+    "who_is_guided": "HER",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Handjob", "Male Submissive", "Vaginal Penetration"],
+    "image": "experienceimage_edge_control.webp",
+    "latest": false
+  },
+  {
+    "id": "90ef0bce-ef3b-4a7c-aacd-70b89c34594f",
+    "name": "Tongue Tied",
+    "mood": "SENSUAL",
+    "topics": ["ORAL_PLEASURE"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Fingering", "Kissing", "Mutual Masturbation"],
+    "image": "experienceimage_just_the_tongue.webp",
+    "latest": false
+  },
+  {
+    "id": "172cdce2-b9b5-413f-bb12-dca42a48233a",
+    "name": "Her happy ending",
+    "mood": "SENSUAL",
+    "topics": ["EROTIC_MASSAGE", "HANDS_AND_FINGERS", "MINDFUL_AND_CONNECTED"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️",
+    "practice_tags": ["Edging", "Fingering", "Massage"],
+    "image": "experienceimage_her_happy_ending.webp",
+    "latest": false
+  },
+  {
+    "id": "da1ecde1-fd5a-46c8-a44b-2debe56ae89f",
+    "name": "Against the Wall",
+    "mood": "INTENSE",
+    "topics": ["HANDS_AND_FINGERS", "NEW_SEX_POSITIONS"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Explicit Language", "Fingering", "Male Dominant"],
+    "image": "experienceimage_in_the_corner.webp",
+    "latest": false
+  },
+  {
+    "id": "3b0a5f73-2212-4769-8c70-353486a457db",
+    "name": "Yoni Gazing",
+    "mood": "INTENSE",
+    "topics": ["MINDFUL_AND_CONNECTED"],
+    "who_is_guided": "SOLO",
+    "spice": "🌶️",
+    "practice_tags": ["Mindful Touch", "Solo"],
+    "image": "experienceimage_yoni_gazing.webp",
+    "latest": false
+  },
+  {
+    "id": "af1958dd-e313-4c4a-8eb1-3d05859a2d7e",
+    "name": "Mutual Masturbation",
+    "mood": "SENSUAL",
+    "topics": ["WATCHING_AND_BEING_SEEN"],
+    "who_is_guided": "BOTH",
+    "spice": "🌶️🌶️",
+    "practice_tags": ["Caresses", "Exhibitionism", "Mutual Masturbation"],
+    "image": "experienceimage_mutual_masturbation.webp",
+    "latest": false
+  },
+  {
+    "id": "e46ccbbd-ddff-4d51-9046-0f1485df6f00",
+    "name": "Her Little Feather",
+    "mood": "PLAYFUL",
+    "topics": ["SENSORY_PLAY", "TOYS_AND_TOOLS"],
+    "who_is_guided": "HIM",
+    "spice": "🌶️",
+    "practice_tags": ["Mindful Touch", "Woman Guided"],
+    "image": "experienceimage_feather_on_her.webp",
+    "latest": false
+  },
+  {
+    "id": "40fcbabe-0a5a-4a63-a9b1-ae68e8181805",
+    "name": "Table Play",
+    "mood": "INTENSE",
+    "topics": [],
+    "who_is_guided": "HIM",
+    "spice": "🌶️🌶️🌶️",
+    "practice_tags": ["Anal Fingering", "Caresses", "Female Submissive"],
+    "image": "experienceimage_table_play.webp",
+    "latest": false
+  }
 ];
 
 // ── Fetch match from Netlify function ────────────────────────────────────────
@@ -505,10 +1373,10 @@ function addResultCard(match) {
   const av = document.createElement('div');
   av.className = 'mini-av'; av.textContent = '🌸';
 
-  const name = match ? match.episode_name : 'Beneath her Sheets';
-  const reason = match ? match.reason : "You're both craving something tender tonight. Turn the simple touch of fabric into a guided massage that awakens sensation, comfort, and connection.";
+  const name = match ? match.episode_name : 'Tantric Kissing';
+  const reason = match ? match.reason : "Tonight feels like the perfect moment to slow down and connect deeply with each other.";
   const spice = match ? (match.spice || '🌶️') : '🌶️';
-  const tags = match ? (match.practice_tags || []).join(' · ') : 'Massage · Mindful Touch';
+  const tags = match ? (match.practice_tags || []).join(' · ') : 'Kissing · Mindful Breathing';
   const coverHtml = (match && match.image)
     ? `<img class="ep-cover" src="https://melba-app.com/images/${match.image}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><div class="ep-cover-placeholder" style="display:none"></div>`
     : `<div class="ep-cover-placeholder"></div>`;
@@ -580,7 +1448,6 @@ async function runStep(index) {
   }
 
   if (step.result) {
-    // Kick off API call while showing typing indicator
     showTyping();
     const match = await fetchMatch();
     removeTyping();
@@ -608,7 +1475,6 @@ async function handleAnswer(text) {
   sendBtn.classList.remove('active');
   addUser(text);
 
-  // Store answer by step index (steps 0–4 = goal/mood/experience/leads/spice)
   if (currentStep < answerKeys.length) {
     userAnswers[answerKeys[currentStep]] = text;
   }
