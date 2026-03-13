@@ -100,7 +100,6 @@
   }
   .chat-area::-webkit-scrollbar { display: none; }
 
-  /* SPACER at top to push content down initially */
   .chat-spacer { flex: 1; min-height: 0; }
 
   /* BUBBLE ROW */
@@ -247,58 +246,72 @@
   .send-btn.active { opacity: 1; pointer-events: all; }
   .send-btn:active { transform: scale(0.92); }
 
-  /* RESULT CARD */
-  .result-card {
+  /* EPISODE CARD */
+  .ep-card {
     background: #fff;
-    border-radius: 18px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 2px 18px rgba(0,0,0,0.11);
-    max-width: 78%;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    width: 240px;
   }
-  .rc-hero {
-    height: 100px;
-    background: linear-gradient(135deg, #5151F7 0%, #9B7BE8 55%, #D97AC4 100%);
-    display: flex; align-items: flex-end; padding: 12px 14px;
-    position: relative;
+  .ep-cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
   }
-  .rc-tag {
-    font-size: 10px; font-weight: 600;
-    color: rgba(255,255,255,0.8);
-    letter-spacing: 1px; text-transform: uppercase;
+  .ep-cover-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(135deg, #7B6CF6 0%, #D97AC4 100%);
   }
-  .rc-sparkle {
-    position: absolute; top: 12px; right: 14px;
-    font-size: 20px;
-    animation: float 3s ease-in-out infinite;
-  }
-  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
-  .rc-body { padding: 12px 14px 14px; }
-  .rc-title {
+  .ep-body { padding: 14px 16px 16px; }
+  .ep-title {
     font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 17px; font-weight: 800;
-    color: var(--text-dark); margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 6px;
   }
-  .rc-desc {
-    font-size: 12.5px; color: var(--text-mid);
-    line-height: 1.5; margin-bottom: 10px;
+  .ep-meta {
+    font-size: 12px;
+    color: var(--text-mid);
+    margin-bottom: 10px;
+    line-height: 1.5;
   }
-  .rc-chips { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 12px; }
-  .rc-chip {
-    padding: 3px 9px;
-    background: var(--primary-light);
-    color: var(--primary);
+  .ep-spice { color: #E8521A; margin-right: 4px; letter-spacing: -1px; }
+  .ep-desc {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+  .ep-btn {
+    width: 100%;
+    padding: 13px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
     border-radius: 100px;
-    font-size: 11.5px; font-weight: 500;
-  }
-  .rc-btn {
-    width: 100%; padding: 11px;
-    background: var(--primary); color: #fff;
-    border: none; border-radius: 100px;
     font-family: 'DM Sans', sans-serif;
-    font-size: 14px; font-weight: 600;
-    cursor: pointer; transition: transform 0.15s;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    transition: transform 0.15s, opacity 0.15s;
   }
-  .rc-btn:active { transform: scale(0.98); }
+  .ep-btn:active { transform: scale(0.98); opacity: 0.9; }
+  .ep-btn-icon {
+    width: 18px; height: 18px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
 </style>
 </head>
 <body>
@@ -346,6 +359,10 @@ const sendBtn = document.getElementById('sendBtn');
 let currentStep = 0;
 let typing = null;
 let locked = false;
+
+// Track answers across steps: goal, mood, experience, leads, spice
+const userAnswers = { goal: '', mood: '', experience: '', leads: '', spice: '' };
+const answerKeys = ['goal', 'mood', 'experience', 'leads', 'spice'];
 
 const steps = [
   {
@@ -401,10 +418,43 @@ const steps = [
   }
 ];
 
+// ── Episode library (subset for matching — key fields only) ──────────────────
+const EPISODES = [
+  {id:"ep_001",name:"Beneath her Sheets",mood:"CONNECTION",topics:["EROTIC_MASSAGE","MINDFUL_AND_CONNECTED"],who_is_guided:"HER",spice:"🌶️",practice_tags:["Massage","Mindful Touch"],latest:true},
+  {id:"ep_002",name:"The Morning Kiss",mood:"CONNECTION",topics:["MINDFUL_AND_CONNECTED","KISSING"],who_is_guided:"BOTH",spice:"🌶️",practice_tags:["Kissing","Connection"],latest:true},
+  {id:"ep_003",name:"Tantric Touch",mood:"SENSUAL",topics:["EROTIC_MASSAGE","MINDFUL_AND_CONNECTED"],who_is_guided:"BOTH",spice:"🌶️🌶️",practice_tags:["Tantric","Massage"],latest:true},
+  {id:"ep_004",name:"Her Pleasure First",mood:"SENSUAL",topics:["ORAL_PLEASURE","MINDFUL_AND_CONNECTED"],who_is_guided:"HER",spice:"🌶️🌶️",practice_tags:["Oral","Her Pleasure"],latest:true},
+  {id:"ep_005",name:"Take Command",mood:"INTENSE",topics:["POWER_AND_CONTROL","ROLE_PLAYING"],who_is_guided:"HIM",spice:"🌶️🌶️🌶️",practice_tags:["Power","Roleplay"],latest:true},
+  {id:"ep_006",name:"Blindfolded",mood:"INTENSE",topics:["SENSORY_PLAY","POWER_AND_CONTROL"],who_is_guided:"BOTH",spice:"🌶️🌶️🌶️",practice_tags:["Sensory","Blindfold"],latest:true},
+  {id:"ep_007",name:"Playful Tease",mood:"PLAYFUL",topics:["MINDFUL_AND_CONNECTED","ROLE_PLAYING"],who_is_guided:"BOTH",spice:"🌶️🌶️",practice_tags:["Teasing","Playful"],latest:true},
+  {id:"ep_008",name:"New Angles",mood:"SENSUAL",topics:["NEW_SEX_POSITIONS","MINDFUL_AND_CONNECTED"],who_is_guided:"BOTH",spice:"🌶️🌶️",practice_tags:["Positions","Exploration"],latest:true},
+  {id:"ep_009",name:"Slow Burn",mood:"SENSUAL",topics:["EROTIC_MASSAGE","ORAL_PLEASURE"],who_is_guided:"HER",spice:"🌶️🌶️",practice_tags:["Slow","Sensual"],latest:true},
+  {id:"ep_010",name:"Reconnect",mood:"CONNECTION",topics:["MINDFUL_AND_CONNECTED","KISSING"],who_is_guided:"BOTH",spice:"🌶️",practice_tags:["Connection","Intimacy"],latest:true},
+  {id:"ep_011",name:"The Dominant",mood:"INTENSE",topics:["POWER_AND_CONTROL","SENSORY_PLAY"],who_is_guided:"HIM",spice:"🌶️🌶️🌶️",practice_tags:["Dominance","Intensity"],latest:true},
+  {id:"ep_012",name:"Playful Roleplay",mood:"PLAYFUL",topics:["ROLE_PLAYING","NEW_SEX_POSITIONS"],who_is_guided:"BOTH",spice:"🌶️🌶️",practice_tags:["Roleplay","Fun"],latest:true}
+];
+
+// ── Fetch match from Netlify function ────────────────────────────────────────
+async function fetchMatch() {
+  try {
+    const resp = await fetch('/.netlify/functions/match', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ answers: userAnswers, episodes: EPISODES })
+    });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    return await resp.json();
+  } catch (err) {
+    console.error('fetchMatch error:', err);
+    return null;
+  }
+}
+
+// ── Utility ──────────────────────────────────────────────────────────────────
 function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 function scrollDown() {
-  setTimeout(() => { chatEl.scrollTop = chatEl.scrollHeight; }, 40); 
+  setTimeout(() => { chatEl.scrollTop = chatEl.scrollHeight; }, 40);
 }
 
 function showTyping() {
@@ -449,28 +499,36 @@ function addUser(text) {
   scrollDown();
 }
 
-function addResultCard() {
+function addResultCard(match) {
   const row = document.createElement('div');
   row.className = 'bubble-row melba-row';
   const av = document.createElement('div');
   av.className = 'mini-av'; av.textContent = '🌸';
+
+  const name = match ? match.episode_name : 'Beneath her Sheets';
+  const reason = match ? match.reason : "You're both craving something tender tonight. Turn the simple touch of fabric into a guided massage that awakens sensation, comfort, and connection.";
+  const spice = match ? (match.spice || '🌶️') : '🌶️';
+  const tags = match ? (match.practice_tags || []).join(' · ') : 'Massage · Mindful Touch';
+  const coverHtml = (match && match.image)
+    ? `<img class="ep-cover" src="https://melba-app.com/images/${match.image}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><div class="ep-cover-placeholder" style="display:none"></div>`
+    : `<div class="ep-cover-placeholder"></div>`;
+
   const card = document.createElement('div');
-  card.className = 'result-card';
+  card.className = 'ep-card';
   card.innerHTML = `
-    <div class="rc-hero">
-      <div class="rc-tag">Your first experience</div>
-      <div class="rc-sparkle">✨</div>
-    </div>
-    <div class="rc-body">
-      <div class="rc-title">Tantric Kissing</div>
-      <div class="rc-desc">You're both craving something tender tonight. This slows everything down and brings you fully into each other's presence — a perfect first step.</div>
-      <div class="rc-chips">
-        <span class="rc-chip">🌶️ Soft</span>
-        <span class="rc-chip">⏱ &lt;10 min</span>
-        <span class="rc-chip">🫶 Together</span>
-      </div>
-      <button class="rc-btn">Start this experience →</button>
+    ${coverHtml}
+    <div class="ep-body">
+      <div class="ep-title">${name}</div>
+      <div class="ep-meta"><span class="ep-spice">${spice}</span>${tags}</div>
+      <div class="ep-desc">${reason}</div>
+      <button class="ep-btn">
+        <div class="ep-btn-icon">
+          <svg width="8" height="10" viewBox="0 0 8 10" fill="none"><path d="M1 1l6 4-6 4V1z" fill="white"/></svg>
+        </div>
+        Start guided experience
+      </button>
     </div>`;
+
   row.appendChild(av); row.appendChild(card);
   chatEl.appendChild(row);
   requestAnimationFrame(() => requestAnimationFrame(() => row.classList.add('show')));
@@ -522,8 +580,12 @@ async function runStep(index) {
   }
 
   if (step.result) {
-    await delay(600);
-    addResultCard();
+    // Kick off API call while showing typing indicator
+    showTyping();
+    const match = await fetchMatch();
+    removeTyping();
+    await delay(300);
+    addResultCard(match);
     await delay(1400);
     showTyping();
     await delay(800);
@@ -545,6 +607,12 @@ async function handleAnswer(text) {
   textInput.value = '';
   sendBtn.classList.remove('active');
   addUser(text);
+
+  // Store answer by step index (steps 0–4 = goal/mood/experience/leads/spice)
+  if (currentStep < answerKeys.length) {
+    userAnswers[answerKeys[currentStep]] = text;
+  }
+
   await delay(300);
 
   const nextStep = steps[currentStep + 1];
